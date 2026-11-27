@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach Connect | Community & Volunteer Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-flex">
+      <div class="logo">Outreach<span>Connect</span></div>
+      <nav>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#create">Host Event</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Bridging Communities & Volunteers</h1>
+      <p>Discover local outreach programs, register to volunteer, or launch your own community initiative.</p>
+      <a href="#campaigns" class="btn btn-primary">Explore Opportunities</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Filter & Campaigns List -->
+    <section id="campaigns" class="section">
+      <div class="section-header">
+        <h2>Active Outreach Campaigns</h2>
+        <select id="categoryFilter">
+          <option value="All">All Categories</option>
+          <option value="Education">Education</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Environment">Environment</option>
+          <option value="Food Drive">Food Drive</option>
+        </select>
+      </div>
+      <div id="campaignGrid" class="grid">
+        <!-- Campaign cards injected via JS -->
+      </div>
+    </section>
+
+    <!-- Create Campaign Form -->
+    <section id="create" class="section form-section">
+      <h2>Launch a New Outreach Campaign</h2>
+      <form id="campaignForm">
+        <div class="form-row">
+          <input type="text" id="title" placeholder="Campaign Title" required>
+          <input type="text" id="organization" placeholder="Organization / NGO Name" required>
+        </div>
+        <div class="form-row">
+          <select id="category" required>
+            <option value="Environment">Environment</option>
+            <option value="Education">Education</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Food Drive">Food Drive</option>
+          </select>
+          <input type="text" id="location" placeholder="City / Venue" required>
+        </div>
+        <div class="form-row">
+          <input type="date" id="date" required>
+          <input type="number" id="volunteersNeeded" placeholder="Volunteers Needed (e.g., 20)" min="1" required>
+        </div>
+        <textarea id="description" rows="4" placeholder="Describe the outreach goals and volunteer roles..." required></textarea>
+        <button type="submit" class="btn btn-primary">Publish Campaign</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Volunteer Registration Modal -->
+  <div id="volunteerModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3 id="modalTitle">Volunteer Registration</h3>
+      <form id="volunteerForm">
+        <input type="hidden" id="modalCampaignId">
+        <input type="text" id="volName" placeholder="Your Full Name" required>
+        <input type="email" id="volEmail" placeholder="Email Address" required>
+        <input type="tel" id="volPhone" placeholder="Phone Number" required>
+        <button type="submit" class="btn btn-primary">Confirm Registration</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
