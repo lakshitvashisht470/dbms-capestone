@@ -1,0 +1,7 @@
+outreach-connect/
+├── server.js          # Node.js + Express + MongoDB Backend
+├── package.json       # Project dependencies
+└── public/
+    ├── index.html     # Frontend UI
+    ├── style.css      # Styling
+    └── app.js         # Frontend logic & API calls
